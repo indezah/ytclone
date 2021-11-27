@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube</title>
+    <style>
+        * {
+            transition: all 0.1s;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            display: flex;
+            margin: 0px;
+        }
+        
+        #side {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            width: 17vw;
+        }
+        
+        #nav {
+            background: white;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 60px;
+            position: fixed;
+        }
+        
+        #body {
+            margin-top: 130px;
+            display: flex;
+            flex-wrap: wrap;
+            background-color: rgb(245, 245, 245);
+            flex: 1;
+            justify-content: space-evenly;
+        }
+        
+        #rest {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        
+        .nav {
+            font-size: 20px;
+            width: 100%;
+            margin: 20px 10px 10px 30px;
+        }
+        
+        .yt {
+            margin-top: 18px;
+            margin-left: 10px;
+            height: 25px;
+        }
+        
+        .sidetop {
+            background: white;
+            display: flex;
+            height: 50px;
+            position: fixed;
+        }
+        
+        .sidebody {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            width: 250px;
+        }
+        
+        .sidebody ul {
+            padding-left: 0;
+        }
+        
+        .sidebody li {
+            list-style-type: none;
+            padding: 10px;
+            padding-left: 35px;
+        }
+        
+        .mobilesidebody {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+        }
+        
+        .mobilesidebody ul {
+            padding-left: 0;
+        }
+        
+        .mobilesidebody li {
+            list-style-type: none;
+            padding: 10px;
+            padding-left: 35px;
+        }
+        
+        ul :hover {
+            background: rgb(206, 206, 206);
+        }
+        
+        li i {
+            font-size: 20px;
+            padding-right: 15px;
+        }
+        
+        #search {
+            margin: 10px;
+            margin-left: 110px;
+            width: 35vw;
+            height: 30px;
+        }
+        
+        #search {
+            display: inline-block;
+            position: relative;
+        }
+        
+        #search button {
+            padding: 0px;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        /* Style the search field */
+        
+        input[type=text] {
+            margin: 10px;
+            width: 40%;
+            margin-right: 0px;
+            margin-left: 100px;
+            padding: 10px;
+            font-size: 17px;
+            border: 0px solid grey;
+            float: left;
+            background: #f1f1f1;
+        }
+        /* Style the submit button */
+        
+        button {
+            margin: 10px;
+            margin-left: 0px;
+            width: 80px;
+            padding: 10px;
+            background: rgb(182, 182, 182);
+            color: white;
+            font-size: 17px;
+            border: 0px solid rgb(209, 209, 209);
+            border-left: none;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background: #bebebe;
+        }
+        /* Clear floats */
+        
+        form.example::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        
+        .mic {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgb(230, 230, 230);
+            height: 40px;
+            width: 40px;
+            border-radius: 40px;
+        }
+        
+        .icons {
+            display: flex;
+            align-items: center;
+            margin-left: 140px;
+        }
+        
+        .icons * {
+            padding: 18px;
+            font-size: 18px;
+        }
+        
+        .rick {
+            padding: 0px;
+            margin-left: 10px;
+            height: 40px;
+            border-radius: 40px;
+        }
+        
+        .strip {
+            border-top: 1px solid rgb(197, 196, 196);
+            border-bottom: 1px solid rgb(197, 196, 196);
+            padding: 20px;
+            top: 60px;
+            position: fixed;
+            width: 100%;
+            background: white;
+        }
+        
+        .strip ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .strip ul li {
+            float: left;
+            padding: 3px 10px 5px 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+            border-radius: 20px;
+            border: 1px solid rgb(194, 194, 194);
+            background: rgb(202, 202, 202);
+        }
+        
+        #body {
+            padding-top: 10px;
+        }
+        
+        .vid {
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+        }
+        
+        .vid .tn {
+            width: 280px;
+            padding: 10px;
+        }
+        
+        .meta {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .d {
+            display: flex;
+            padding: 10px;
+        }
+        
+        .vid p {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            margin: 0px;
+        }
+        
+        .minidp {
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+            margin-right: 10px;
+        }
+        
+        .mobilesidebody {
+            display: none;
+        }
+        
+        .yt2 {
+            display: none;
+        }
+        
+        @media screen and (max-width: 1200px) {
+            .sidebody {
+                display: none;
+            }
+            .mobilesidebody {
+                display: block;
+            }
+            .yt1 {
+                display: none;
+            }
+            .yt2 {
+                display: block;
+            }
+            #side {
+                width: 10%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="side">
+        <div class="sidetop">
+            <a href="" class="icon"><i class="nav fas fa-bars"></i></a>
+            <a href="" class="icon"><img class="yt1 yt" src="ytlogo.png"></a>
+
+        </div>
+        <div class="sidebody">
+            <ul>
+                <li style="background: rgb(235, 235, 235);" id="n1"> <i class=" fas fa-home "></i>Home</li>
+                <li><i class="far fa-compass "></i>Explore</li>
+                <li><i class="fas fa-layer-group "></i>Subscriptions</li>
+                <hr style="margin-top:15px;margin-bottom:15px; width: 90%; color: grey; ">
+                <li>Library</li>
+                <li><i class="fas fa-history "></i>History</li>
+                <li><i class="far fa-play-circle "></i>Your videos</li>
+                <li><i class="far fa-clock "></i>Watch later</li>
+                <li><i class="far fa-thumbs-up "></i>Liked videos</li>
+            </ul>
+        </div>
+        <div class="mobilesidebody">
+            <ul>
+                <li id="n1"> <i class=" fas fa-home "></i></li>
+                <li><i class="far fa-compass "></i></li>
+                <li><i class="fas fa-layer-group "></i></li>
+                <hr style="margin-top:15px;margin-bottom:15px; width: 90%; color: grey; ">
+                <li></li>
+                <li><i class="fas fa-history "></i></li>
+                <li><i class="far fa-play-circle "></i></li>
+                <li><i class="far fa-clock "></i></li>
+                <li><i class="far fa-thumbs-up "></i></li>
+            </ul>
+        </div>
+    </div>
+    <div id="rest">
+        <div id="nav">
+            <a href="" class="icon"><img class="yt2 yt" src="ytlogo.png"></a>
+            <input type="text" placeholder="Search.." name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+
+            <div class="mic"><i class="fas fa-microphone"></i></div>
+            <div class="icons">
+                <i class="fas fa-video"></i> <i class="fas fa-th"></i>
+                <i class="far fa-bell"></i>
+                <img class="rick" src="./Ln0v50LP_400x400.jpg" alt="" class="src">
+            </div>
+        </div>
+        <div class="strip">
+            <ul>
+                <li>Music</li>
+                <li>Science Fiction</li>
+                <li>Superheroes</li>
+                <li>Venom</li>
+            </ul>
+        </div>
+        <div id="body">
+            <div class="vid">
+                <img class="tn" src="tn.jpg">
+                <div class="d">
+                    <img src="./Ln0v50LP_400x400.jpg" class="minidp">
+                    <div class="meta">
+                        <p>
+                            <b>YouTube Thumbnail</b>
+                            <p>Rick Astley<br>6.9M Views o 3 Years Ago</p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="vid">
+                <img class="tn" src="tn.jpg">
+                <div class="d">
+                    <img src="./Ln0v50LP_400x400.jpg" class="minidp">
+                    <div class="meta">
+                        <p>
+                            <b>YouTube Thumbnail</b>
+                            <p>Rick Astley<br>6.9M Views o 3 Years Ago</p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="vid">
+                <img class="tn" src="tn.jpg">
+                <div class="d">
+                    <img src="./Ln0v50LP_400x400.jpg" class="minidp">
+                    <div class="meta">
+                        <p>
+                            <b>YouTube Thumbnail</b>
+                            <p>Rick Astley<br>6.9M Views o 3 Years Ago</p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="vid">
+                <img class="tn" src="tn.jpg">
+                <div class="d">
+                    <img src="./Ln0v50LP_400x400.jpg" class="minidp">
+                    <div class="meta">
+                        <p>
+                            <b>YouTube Thumbnail</b>
+                            <p>Rick Astley<br>6.9M Views o 3 Years Ago</p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="vid">
+                <img class="tn" src="tn.jpg">
+                <div class="d">
+                    <img src="./Ln0v50LP_400x400.jpg" class="minidp">
+                    <div class="meta">
+                        <p>
+                            <b>YouTube Thumbnail</b>
+                            <p>Rick Astley<br>6.9M Views o 3 Years Ago</p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="vid">
+                <img class="tn" src="tn.jpg">
+                <div class="d">
+                    <img src="./Ln0v50LP_400x400.jpg" class="minidp">
+                    <div class="meta">
+                        <p>
+                            <b>YouTube Thumbnail</b>
+                            <p>Rick Astley<br>6.9M Views o 3 Years Ago</p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="vid">
+                <img class="tn" src="tn.jpg">
+                <div class="d">
+                    <img src="./Ln0v50LP_400x400.jpg" class="minidp">
+                    <div class="meta">
+                        <p>
+                            <b>YouTube Thumbnail</b>
+                            <p>Rick Astley<br>6.9M Views o 3 Years Ago</p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="vid">
+                <img class="tn" src="tn.jpg">
+                <div class="d">
+                    <img src="./Ln0v50LP_400x400.jpg" class="minidp">
+                    <div class="meta">
+                        <p>
+                            <b>YouTube Thumbnail</b>
+                            <p>Rick Astley<br>6.9M Views o 3 Years Ago</p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="vid">
+                <img class="tn" src="tn.jpg">
+                <div class="d">
+                    <img src="./Ln0v50LP_400x400.jpg" class="minidp">
+                    <div class="meta">
+                        <p>
+                            <b>YouTube Thumbnail</b>
+                            <p>Rick Astley<br>6.9M Views o 3 Years Ago</p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="vid">
+                <img class="tn" src="tn.jpg">
+                <div class="d">
+                    <img src="./Ln0v50LP_400x400.jpg" class="minidp">
+                    <div class="meta">
+                        <p>
+                            <b>YouTube Thumbnail</b>
+                            <p>Rick Astley<br>6.9M Views o 3 Years Ago</p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="vid">
+                <img class="tn" src="tn.jpg">
+                <div class="d">
+                    <img src="./Ln0v50LP_400x400.jpg" class="minidp">
+                    <div class="meta">
+                        <p>
+                            <b>YouTube Thumbnail</b>
+                            <p>Rick Astley<br>6.9M Views o 3 Years Ago</p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="vid">
+                <img class="tn" src="tn.jpg">
+                <div class="d">
+                    <img src="./Ln0v50LP_400x400.jpg" class="minidp">
+                    <div class="meta">
+                        <p>
+                            <b>YouTube Thumbnail</b>
+                            <p>Rick Astley<br>6.9M Views o 3 Years Ago</p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+</body>
+
+</html>
