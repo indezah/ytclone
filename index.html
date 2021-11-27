@@ -8,13 +8,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YouTube</title>
+    <link rel="shortcut icon" type="image/jpg" href="ytfavicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <style>
         * {
             transition: all 0.1s;
+            user-select: none;
+        }
+        
+        li:hover {
+            cursor: pointer;
+        }
+        
+        .vid:hover {
+            cursor: pointer;
+        }
+        
+        .icons :hover {
+            cursor: pointer;
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: #030303;
+            font-family: 'Roboto';
             display: flex;
             margin: 0px;
         }
@@ -36,7 +54,7 @@
         }
         
         #body {
-            margin-top: 130px;
+            margin-top: 115px;
             display: flex;
             flex-wrap: wrap;
             background-color: rgb(245, 245, 245);
@@ -141,21 +159,21 @@
             margin-left: 100px;
             padding: 10px;
             font-size: 17px;
-            border: 0px solid grey;
+            border: 0.5px solid #cccccc;
             float: left;
-            background: #f1f1f1;
+            background: #ffffff;
         }
         /* Style the submit button */
         
         button {
             margin: 10px;
             margin-left: 0px;
-            width: 80px;
+            width: 60px;
             padding: 10px;
-            background: rgb(182, 182, 182);
-            color: white;
+            background: #f0f0f0;
+            color: #030303;
             font-size: 17px;
-            border: 0px solid rgb(209, 209, 209);
+            border: 0.5px solid #cccccc;
             border-left: none;
             cursor: pointer;
         }
@@ -175,7 +193,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgb(230, 230, 230);
+            background: #f9f9f9;
             height: 40px;
             width: 40px;
             border-radius: 40px;
@@ -202,7 +220,7 @@
         .strip {
             border-top: 1px solid rgb(197, 196, 196);
             border-bottom: 1px solid rgb(197, 196, 196);
-            padding: 20px;
+            padding: 12px;
             top: 60px;
             position: fixed;
             width: 100%;
@@ -217,12 +235,17 @@
         
         .strip ul li {
             float: left;
-            padding: 3px 10px 5px 10px;
+            font-size: 15px;
+            padding: 5px 14px 5px 14px;
             margin-left: 10px;
             margin-right: 10px;
             border-radius: 20px;
             border: 1px solid rgb(194, 194, 194);
-            background: rgb(202, 202, 202);
+            background: #f1f1f1;
+        }
+        
+        .strip ul :hover {
+            background: #b6b6b6;
         }
         
         #body {
@@ -250,11 +273,20 @@
             padding: 10px;
         }
         
+        .vid b {
+            font-size: 15px;
+            margin-bottom: 5px;
+            color: #030303;
+        }
+        
         .vid p {
+            color: rgb(70, 70, 70);
             display: flex;
             align-items: center;
             justify-content: start;
             margin: 0px;
+            font-size: 12px;
+            line-height: 16px;
         }
         
         .minidp {
@@ -295,7 +327,7 @@
 <body>
     <div id="side">
         <div class="sidetop">
-            <a href="" class="icon"><i class="nav fas fa-bars"></i></a>
+            <a href="" class="icon" style="text-decoration: none; color: #030303;"><i class="nav fas fa-bars"></i></a>
             <a href="" class="icon"><img class="yt1 yt" src="ytlogo.png"></a>
 
         </div>
@@ -305,11 +337,13 @@
                 <li><i class="far fa-compass "></i>Explore</li>
                 <li><i class="fas fa-layer-group "></i>Subscriptions</li>
                 <hr style="margin-top:15px;margin-bottom:15px; width: 90%; color: grey; ">
-                <li>Library</li>
+                <li><i class="fas fa-cube"></i>Library</li>
                 <li><i class="fas fa-history "></i>History</li>
                 <li><i class="far fa-play-circle "></i>Your videos</li>
                 <li><i class="far fa-clock "></i>Watch later</li>
                 <li><i class="far fa-thumbs-up "></i>Liked videos</li>
+                <hr style="margin-top:15px;margin-bottom:15px; width: 90%; color: grey; ">
+                <li style="color:#606060; font-weight:bold;">SUBSCRIPTIONS</li>
             </ul>
         </div>
         <div class="mobilesidebody">
@@ -323,13 +357,15 @@
                 <li><i class="far fa-play-circle "></i></li>
                 <li><i class="far fa-clock "></i></li>
                 <li><i class="far fa-thumbs-up "></i></li>
+                <hr style="margin-top:15px;margin-bottom:15px; width: 90%; color: grey; ">
+
             </ul>
         </div>
     </div>
     <div id="rest">
         <div id="nav">
             <a href="" class="icon"><img class="yt2 yt" src="ytlogo.png"></a>
-            <input type="text" placeholder="Search.." name="search">
+            <input type="text" placeholder="Search" name="search">
             <button type="submit"><i class="fa fa-search"></i></button>
 
             <div class="mic"><i class="fas fa-microphone"></i></div>
